@@ -1,3 +1,4 @@
+import os
 import math_functions as mf
 
 number_of_problems = 10
@@ -19,9 +20,10 @@ def intro_screen():
 
         while game_selected > len(problem_list.keys()):
 
-            print("Please select a valid option\r\n")
+            print("Please select a valid option")
             game_selected = user_input()
 
+    os.system('cls')
     return game_selected
 
 
@@ -41,7 +43,7 @@ def game_loop(game_selected, correct_answers):
 
 
 def user_input() -> int:
-    """takes in a string and makes sure the output is always a positive integer"""
+    """asks the user for input and makes sure the output is always a positive integer"""
     choice = input().lower()
 
     while not choice.isdigit():
